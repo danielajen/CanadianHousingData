@@ -51,10 +51,6 @@ node server
 cd ..
 npm install
 
-# Install data processing tools
-cd ..
-pip install -r requirements.txt
-
 ```
 
 # 📊 Data Sources & Integration
