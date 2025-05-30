@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Canadian Housing Data Hub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/React-18.2-blue)](https://react.dev/)
+[![Chart.js](https://img.shields.io/badge/Chart.js-4.4-green)](https://www.chartjs.org/)
 
-## Available Scripts
+> A civic-tech platform transforming complex housing data into actionable insights for Canadians
 
-In the project directory, you can run:
+This full-stack application visualizes Canadian housing statistics to promote data literacy and civic engagement. Built for GLOCAL's mission, it combines interactive dashboards with policy education tools to empower tenants, researchers, and activists.
 
-### `npm start`
+**Live Demo**: [https://canadianhousinghub.glocal.org](https://canadianhousinghub.glocal.org) (hosted on Render + GitHub Pages)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Dashboard Preview](https://raw.githubusercontent.com/danielajen/CanadianHousingData/main/client/public/dashboard-preview.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Features
+- **Interactive Housing Dashboards**: Explore rent prices, vacancy rates, and affordability metrics
+- **Localized Insights**: Filter data by province, city, or political riding
+- **Policy Education Hub**: Understand housing legislation and tenant rights
+- **AI Housing Assistant**: Chatbot powered by Google Gemini API
+- **Civic Action Tools**: Contact MPs, generate petitions, find tenant unions
+- **Indigenous Housing Data**: Dedicated section for First Nations housing metrics
 
-### `npm test`
+## 🧰 Tech Stack
+| Component              | Technology                          |
+|------------------------|-------------------------------------|
+| **Frontend**           | React 18, Chart.js 4, Tailwind CSS  |
+| **Backend**            | Node.js 20, Express 4, REST API     |
+| **Data Processing**    | Python 3.11 (Pandas, NumPy)         |
+| **AI Integration**     | Google Gemini API                   |
+| **Hosting**            | Render (Backend), GitHub Pages (Frontend) |
+| **Data Sources**       | CMHC, Statistics Canada, Bank of Canada |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📂 Repository Structure
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
+- Node.js 18+
+- Python 3.11+
+- Google Gemini API key
+- StatCan API key
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
+```bash
+# Clone repository
+git clone https://github.com/danielajen/CanadianHousingData.git
+cd CanadianHousingData
 
-### `npm run eject`
+# Install backend dependencies
+cd  backend
+node server
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Install frontend dependencies
+cd ..
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Install data processing tools
+cd ..
+pip install -r requirements.txt
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# 📊 Data Sources & Integration
 
-## Learn More
+## 🏢 Statistics Canada Integration (Node.js)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```javascript
+// server/routes/statcan.js
+app.get('/api/statcan/housing-prices', async (req, res) => {
+  const response = await fetch('https://api.statcan.gc.ca/census-recensement/profile/sdmx/rest/data/34100127', {
+    headers: { 'Authorization': `Bearer ${process.env.STATCAN_API_KEY}` }
+  });
+  const data = await response.json();
+  // Process data for Chart.js visualization
+  res.json(data);
+});
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3. Data Table STATSCAN
 
-### Code Splitting
+```markdown
+| Table ID    | Dataset Name             | Frequency | Coverage           | Key Metrics                 |
+|-------------|--------------------------|-----------|--------------------|-----------------------------|
+| **34100127** | Housing Price Statistics | Monthly   | National/Provincial | Price indices, YoY changes  |
+| **46100074** | Rental Market Survey     | Quarterly | 37 CMAs            | Average rent, vacancy rates |
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📈 Application Overview
 
-### Analyzing the Bundle Size
+The **Canadian Housing Data Hub** is a civic-tech platform that transforms complex housing data into accessible insights. Our mission is to empower Canadians with:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| Core Function         | Description                                                                 |
+|-----------------------|-----------------------------------------------------------------------------|
+| **Data Simplification** | Makes Canadian housing data approachable and understandable for all users  |
+| **Interactive Tools** | Provides dynamic dashboards for exploring housing trends and patterns       |
+| **Education**         | Offers curated content to explain housing market dynamics                   |
+| **Action Platform**   | Equips users with tools to engage with housing advocacy and policy issues   |
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Key Objectives:
+- Democratize access to housing market intelligence
+- Visualize trends through engaging data experiences
+- Bridge the gap between complex statistics and public understanding
+- Foster informed discussions on housing affordability
