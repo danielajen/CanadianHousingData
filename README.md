@@ -8,9 +8,7 @@
 
 This full-stack application visualizes Canadian housing statistics to promote data literacy and civic engagement. Built for GLOCAL's mission, it combines interactive dashboards with policy education tools to empower tenants, researchers, and activists.
 
-**Live Demo**: [https://canadianhousinghub.glocal.org](https://canadianhousinghub.glocal.org) (hosted on Render + GitHub Pages)
 
-![Dashboard Preview](https://raw.githubusercontent.com/danielajen/CanadianHousingData/main/client/public/dashboard-preview.png)
 
 ## ✨ Features
 - **Interactive Housing Dashboards**: Explore rent prices, vacancy rates, and affordability metrics
@@ -25,7 +23,6 @@ This full-stack application visualizes Canadian housing statistics to promote da
 |------------------------|-------------------------------------|
 | **Frontend**           | React 18, Chart.js 4, Tailwind CSS  |
 | **Backend**            | Node.js 20, Express 4, REST API     |
-| **Data Processing**    | Python 3.11 (Pandas, NumPy)         |
 | **AI Integration**     | Google Gemini API                   |
 | **Hosting**            | Render (Backend), GitHub Pages (Frontend) |
 | **Data Sources**       | CMHC, Statistics Canada, Bank of Canada |
@@ -37,9 +34,8 @@ This full-stack application visualizes Canadian housing statistics to promote da
 
 ### Prerequisites
 - Node.js 18+
-- Python 3.11+
 - Google Gemini API key
-- StatCan API key
+- StatCan API key Vector ID's
 
 ### Installation
 ```bash
