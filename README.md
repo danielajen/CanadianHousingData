@@ -25,7 +25,7 @@ This full-stack application visualizes Canadian housing statistics to promote da
 | **Backend**            | Node.js 20, Express 4, REST API     |
 | **AI Integration**     | Google Gemini API                   |
 | **Hosting**            | Render (Backend), GitHub Pages (Frontend) |
-| **Data Sources**       | CMHC, Statistics Canada, Bank of Canada |
+| **Data Sources**       | CMHC, Statistics Canada |
 
 ## 📂 Repository Structure
 
