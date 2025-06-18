@@ -3,14 +3,15 @@ const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 
-
 const app = express();
-app.use(cors({
-  origin: process.env.CLIENT_URL,
-  methods: ['POST'] 
-}));
-app.use(express.json());
 
+// CORS origin uses env var or fallback for local dev
+app.use(cors({
+  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  methods: ['POST']
+}));
+
+app.use(express.json());
 
 app.post('/api/statcan', async (req, res) => {
   try {
@@ -22,15 +23,13 @@ app.post('/api/statcan', async (req, res) => {
     res.json(statcanResponse.data);
   } catch (error) {
     console.error('Full Error:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: error.message,
-      details: error.response?.data 
+      details: error.response?.data
     });
   }
 });
 
-
-
-
 const PORT = process.env.PORT || 3001;
+
 app.listen(PORT, () => console.log(`Proxy running on port ${PORT}`));
