@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -14,14 +14,6 @@ import IndigenousHousing from "./pages/IndigenousHousing";
 import Chatbot from "./components/Chatbot";
 
 function App() {
-  return (
-    <Router>
-      <AppContent />
-    </Router>
-  );
-}
-
-function AppContent() {
   const location = useLocation();
 
   useEffect(() => {
