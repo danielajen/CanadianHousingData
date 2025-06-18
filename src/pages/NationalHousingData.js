@@ -131,7 +131,7 @@ const NationalHousingData = () => {
         backgroundColor: "#1a365d",
         color: "white",
         padding: "80px 20px",
-        backgroundImage: "url(/assets/NationalHousing.jpg)",
+        backgroundImage: `url(${process.env.PUBLIC_URL}/assets/NationalHousing.jpg)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         position: "relative"

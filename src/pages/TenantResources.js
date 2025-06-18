@@ -257,7 +257,7 @@ const fetchAssessmentGrowth = async () => {
           backgroundColor: "#1a365d",
           color: "white",
           padding: "80px 20px",
-          backgroundImage: "url(/assets/tenant.png)",
+          backgroundImage: `url(${process.env.PUBLIC_URL}/assets/tenant.png`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           position: "relative",

@@ -12,7 +12,7 @@ const Contact = () => {
   return (
     <div className="flex flex-col">
       <div className="w-full text-white px-4 py-20 relative" style={{
-        backgroundImage: "url('/assets/contactus.jpg')",
+         backgroundImage: `url(${process.env.PUBLIC_URL}/assets/contactus.jpg)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}>

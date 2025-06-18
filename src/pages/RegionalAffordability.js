@@ -259,7 +259,7 @@ const RegionalAffordability = () => {
         backgroundColor: "#1a365d",
         color: "white",
         padding: "80px 20px",
-        backgroundImage: "url(/assets/RegionalAffordability.jpg)",
+        backgroundImage: `url(${process.env.PUBLIC_URL}/assets/RegionalAffordability.jpg`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         position: "relative"

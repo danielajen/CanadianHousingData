@@ -18,7 +18,7 @@ const Home = () => {
           backgroundColor: "#1a365d",
           color: "white",
           padding: "80px 20px",
-          backgroundImage: "url(/assets/main-banner.png)",
+          backgroundImage: `url(${process.env.PUBLIC_URL}/assets/main-banner.png)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           position: "relative",
@@ -116,7 +116,7 @@ const Home = () => {
             </div>
             <div style={{ flex: "1 1 40%", overflow: "hidden", borderRadius: "12px" }}>
               <img
-                src="/assets/about.png"
+                src={`${process.env.PUBLIC_URL}/assets/about.png`}
                 alt="Infographic"
                 style={{ width: "100%", height: "100%", objectFit: "cover", maxHeight: "350px" }}
               />
@@ -125,114 +125,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Key Trends Section */}
-      <div style={{ backgroundColor: "#ffffff", padding: "60px 20px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
-          <h2 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "30px" }}>Key Trends from 2023–2025</h2>
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "20px",
-            textAlign: "left"
-          }}>
-            <div style={{ backgroundColor: "#f9fafb", border: "1px solid #ddd", padding: "20px", borderRadius: "8px" }}>
-              <h3 style={{ fontSize: "1.25rem", fontWeight: "600", marginBottom: "12px" }}>🏘 Housing Starts</h3>
-              <p>National housing starts dropped 3.3% in early 2025. Construction lags behind population growth in major metros.</p>
-            </div>
-            <div style={{ backgroundColor: "#f9fafb", border: "1px solid #ddd", padding: "20px", borderRadius: "8px" }}>
-              <h3 style={{ fontSize: "1.25rem", fontWeight: "600", marginBottom: "12px" }}>📈 Rent vs Income</h3>
-              <p>In cities like Toronto, renters spend over 35% of income on housing. The affordability threshold is 30% or lower.</p>
-            </div>
-            <div style={{ backgroundColor: "#f9fafb", border: "1px solid #ddd", padding: "20px", borderRadius: "8px" }}>
-              <h3 style={{ fontSize: "1.25rem", fontWeight: "600", marginBottom: "12px" }}>🏚 Vacancy & Crowding</h3>
-              <p>Vacancy rates remain under 2.5%. Crowding in immigrant and low-income households is rising — especially in BC and ON.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ✅ Combined CTA Section */}
-      {/* <div style={{ backgroundColor: "#dc2626", color: "white", padding: "60px 20px" }}>
-        <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
-          <h2 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "20px" }}>
-            Ready to explore Canada's housing data?
-          </h2>
-          <p style={{ fontSize: "1.2rem", marginBottom: "30px" }}>
-            Start with a national overview or dive into localized trends and challenges.
-          </p>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "15px", marginBottom: "40px" }}>
-            <button
-              onClick={() => navigate("/national-housing-data")}
-              style={{
-                backgroundColor: "white",
-                color: "#dc2626",
-                padding: "12px 24px",
-                borderRadius: "8px",
-                fontWeight: "bold",
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
-              View National Data
-            </button>
-            <button
-              onClick={() => navigate("/regional-affordability")}
-              style={{
-                backgroundColor: "transparent",
-                color: "white",
-                padding: "12px 24px",
-                border: "2px solid white",
-                borderRadius: "8px",
-                fontWeight: "bold",
-                cursor: "pointer",
-              }}
-            >
-              Find Local Insights
-            </button>
-          </div>
-
-          <hr style={{ borderColor: "rgba(255,255,255,0.2)", marginBottom: "30px" }} />
-
-          <h2 style={{ fontSize: "1.75rem", fontWeight: "bold", marginBottom: "15px" }}>
-            Take the Next Step
-          </h2>
-          <p style={{ fontSize: "1.1rem", marginBottom: "25px" }}>
-            Learn how government policy impacts housing — and what you can do to push for change.
-          </p>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "15px" }}>
-            <button
-              onClick={() => navigate("/news")}
-              style={{
-                backgroundColor: "white",
-                color: "#dc2626",
-                padding: "10px 20px",
-                borderRadius: "6px",
-                fontWeight: "bold",
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
-              Explore More Data
-            </button>
-            <button
-              onClick={() => navigate("/housing-policy")}
-              style={{
-                border: "2px solid white",
-                backgroundColor: "transparent",
-                color: "white",
-                padding: "10px 20px",
-                borderRadius: "6px",
-                fontWeight: "bold",
-                cursor: "pointer",
-              }}
-            >
-              Learn About Housing Policy
-            </button>
-          </div>
-        </div>
-      </div> */}
-
-      {/* ✅ Refined CTA Section with White Background */}
+  
 <div
   style={{
     backgroundColor: "#ffffff",

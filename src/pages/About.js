@@ -37,7 +37,7 @@ const About = () => {
       </div> */}
 
 <div className="w-full text-white px-4 py-20 relative" style={{
-  backgroundImage: "url('/assets/about-us.png')",
+  backgroundImage: `url(${process.env.PUBLIC_URL}/assets/about-us.png')`,
   backgroundSize: "cover",
   backgroundPosition: "center",
 }}>
@@ -146,7 +146,7 @@ const About = () => {
             textAlign: "center",
             backgroundColor: "#f9f9f9"
           }}>
-            <img src="/assets/maan.jpg" alt="Maan Patel" style={{
+            <img src={`${process.env.PUBLIC_URL}/assets/maan.jpg`} alt="Maan Patel" style={{
               width: "100px",
               height: "100px",
               marginLeft: "40px",
@@ -167,7 +167,7 @@ const About = () => {
             textAlign: "center",
             backgroundColor: "#f9f9f9"
           }}>
-            <img src="/assets/daniel.jpg" alt="Daniel" style={{
+            <img src={`${process.env.PUBLIC_URL}/assets/daniel.jpg`} alt="Daniel" style={{
               width: "100px",
               height: "100px",
              marginLeft: "40px",
