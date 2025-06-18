@@ -368,7 +368,7 @@ const fetchAssessmentGrowth = async () => {
     </div>
 
 {/* vacancy */}
-    <div style={{ 
+<div style={{ 
   background: '#fff', 
   padding: '20px', 
   borderRadius: '8px', 
@@ -377,6 +377,15 @@ const fetchAssessmentGrowth = async () => {
 }}>
   <h3 style={{ color: '#2c3e50', marginBottom: '15px' }}>Rental Vacancy Rates in Major Canadian Cities</h3>
   
+  {/* City selection explanation */}
+  <div style={{ marginBottom: '20px', color: '#34495e', fontSize: '0.95em' }}>
+    <p>
+      The cities featured in this analysis were selected based on a combination of geographic distribution, population size, and relevance in Canadian housing research. 
+      Using standardized metrics derived from Statistics Canada and national urban planning studies, we focused on metropolitan areas that represent key economic and 
+      demographic hubs across provinces. This ensures that the data reflects trends in Canada’s most impactful and representative urban centres. Source: https://www.mapsofworld.com/canada/cities-map.html
+    </p>
+  </div>
+
   <div style={{ height: '400px', position: 'relative' }}>
     {vacancyData && <Bar 
       data={vacancyData}
@@ -408,26 +417,26 @@ const fetchAssessmentGrowth = async () => {
   </div>
 
   <div style={{ marginTop: '15px' }}>
-  <h4>2024 Key Insights</h4>
-  <ul>
-    <li><strong>Toronto:</strong> Growing rental demand driven by strong job market and immigration</li>
-    <li><strong>Montréal:</strong> Moderate vacancy amid steady population growth and new developments</li>
-    <li><strong>Vancouver:</strong> Low vacancy due to limited new supply and high demand</li>
-    <li><strong>Calgary:</strong> Higher vacancy due to recent housing development booms</li>
-    <li><strong>Edmonton:</strong> Rising vacancy reflecting slower economic growth</li>
-    <li><strong>Ottawa-Gatineau:</strong> Stable rental market with balanced supply and demand</li>
-    <li><strong>Winnipeg:</strong> Slightly tightening market with modest rental increases</li>
-    <li><strong>Québec:</strong> Consistent vacancy rates with gradual urban expansion</li>
-    <li><strong>Hamilton:</strong> Tight rental market reflecting urban growth pressure</li>
-    <li><strong>Kitchener-Cambridge-Waterloo:</strong> Increasing vacancy as new developments come online</li>
-  </ul>
-  <div style={{ fontSize: '0.9em', color: '#666' }}>
-    Source: Statistics Canada (Custom API via Table 34-10-0169-01)
+    <h4>2024 Key Insights</h4>
+    <ul>
+      <li><strong>Toronto:</strong> Growing rental demand driven by strong job market and immigration</li>
+      <li><strong>Montréal:</strong> Moderate vacancy amid steady population growth and new developments</li>
+      <li><strong>Vancouver:</strong> Low vacancy due to limited new supply and high demand</li>
+      <li><strong>Calgary:</strong> Higher vacancy due to recent housing development booms</li>
+      <li><strong>Edmonton:</strong> Rising vacancy reflecting slower economic growth</li>
+      <li><strong>Ottawa-Gatineau:</strong> Stable rental market with balanced supply and demand</li>
+      <li><strong>Winnipeg:</strong> Slightly tightening market with modest rental increases</li>
+      <li><strong>Québec:</strong> Consistent vacancy rates with gradual urban expansion</li>
+      <li><strong>Hamilton:</strong> Tight rental market reflecting urban growth pressure</li>
+      <li><strong>Kitchener-Cambridge-Waterloo:</strong> Increasing vacancy as new developments come online</li>
+    </ul>
+    <div style={{ fontSize: '0.9em', color: '#666' }}>
+      Source: Statistics Canada (Custom API via Table 34-10-0169-01)
+    </div>
   </div>
-</div>
 
-{loading[0] && <div>Loading vacancy data...</div>}
-{error[0] && <div style={{ color: 'red' }}>Error loading vacancy data</div>}
+  {loading[0] && <div>Loading vacancy data...</div>}
+  {error[0] && <div style={{ color: 'red' }}>Error loading vacancy data</div>}
 </div>
 
 
