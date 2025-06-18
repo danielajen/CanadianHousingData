@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/CanadianHousingData/static/css/main.1ec69a42.css",
+    "main.js": "/CanadianHousingData/static/js/main.22dd4862.js",
+    "static/js/787.f5b341af.chunk.js": "/CanadianHousingData/static/js/787.f5b341af.chunk.js",
+    "index.html": "/CanadianHousingData/index.html",
+    "main.1ec69a42.css.map": "/CanadianHousingData/static/css/main.1ec69a42.css.map",
+    "main.22dd4862.js.map": "/CanadianHousingData/static/js/main.22dd4862.js.map",
+    "787.f5b341af.chunk.js.map": "/CanadianHousingData/static/js/787.f5b341af.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ec69a42.css",
+    "static/js/main.22dd4862.js"
+  ]
+}
