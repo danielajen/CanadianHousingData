@@ -35,7 +35,7 @@ const IndigenousHousing = () => {
 
   const fetchHousingNeed = async () => {
     try {
-      const response = await fetch("http://localhost:3001/api/statcan", {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify([
@@ -75,7 +75,7 @@ const IndigenousHousing = () => {
 
   const fetchAffordabilityData = async () => {
     try {
-      const response = await fetch("http://localhost:3001/api/statcan", {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify([
@@ -115,7 +115,7 @@ const IndigenousHousing = () => {
 
   const fetchEducationHousing = async () => {
     try {
-      const response = await fetch("http://localhost:3001/api/statcan", {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify([
@@ -157,7 +157,7 @@ const IndigenousHousing = () => {
 
   /*const fetchHousingDensity = async () => {
     try {
-      const response = await fetch("http://localhost:3001/api/statcan", {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify([

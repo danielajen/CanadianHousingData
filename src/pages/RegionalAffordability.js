@@ -30,7 +30,7 @@ const RegionalAffordability = () => {
   useEffect(() => {
     const fetchAffordabilityData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/statcan", {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify([
@@ -102,7 +102,7 @@ const RegionalAffordability = () => {
 
     const fetchMortgageData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/statcan", {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify([

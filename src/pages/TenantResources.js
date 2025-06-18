@@ -47,7 +47,7 @@ const TenantResources = () => {
     // 1. Social Housing Transit Proximity
     const fetchHousingTransit = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/statcan", {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify([
@@ -95,7 +95,7 @@ const TenantResources = () => {
     // Vacancy Rates in CMAs
     const fetchVacancyRates = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/statcan", {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify([
@@ -167,7 +167,7 @@ const TenantResources = () => {
 // 2. Median Assessment Value Growth (Line Chart)
 const fetchAssessmentGrowth = async () => {
   try {
-    const response = await fetch("http://localhost:3001/api/statcan", {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify([
@@ -211,7 +211,7 @@ const fetchAssessmentGrowth = async () => {
     // 3. Eviction Filings (Bar Chart)
     const fetchEvictions = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/statcan", {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify([
