@@ -12,7 +12,7 @@ const Footer = () => {
     e.preventDefault();
     if (email.trim()) {
       // alert("Subscribed!");
-      window.location.href = `mailto:faye.ying@glocalfoundation.ca?subject=Subscribe&body=Please add ${email} to your newsletter list.`;
+      window.location.href = `mailto:maanpatel1811@gmail.com?subject=Subscribe&body=Please add ${email} to your newsletter list.`;
       setEmail("");
     } else {
       alert("Please enter a valid email address");
@@ -56,7 +56,7 @@ const Footer = () => {
               <p style={{ margin: "0", fontWeight: "bold" }}>
                 DO YOU HAVE A QUESTION?
               </p>
-              <p style={{ margin: "0" }}>Email: faye.ying@glocalfoundation.ca</p>
+              <p style={{ margin: "0" }}>Email: maanpatel1811@gmail.com</p>
             </div>
           </div>
 
@@ -278,7 +278,7 @@ const Footer = () => {
               {
                 icon: "fa-envelope",
                 title: "Email",
-                lines: ["faye.ying@glocalfoundation.ca"],
+                lines: ["maanpatel1811@gmail.com"],
               },
             ].map((item, idx) => (
               <div key={idx} style={{ marginBottom: "20px" }}>
@@ -363,7 +363,7 @@ const Footer = () => {
             marginTop: "20px",
           }}
         >
-          <p style={{ margin: 0 }}>Copyright © 2025 Glocal Foundation of Canada. All Rights Reserved.</p>
+          <p style={{ margin: 0 }}>Copyright © 2025 GLOCAL Foundation of Canada. All Rights Reserved.</p>
         </div>
       </section>
     </footer>

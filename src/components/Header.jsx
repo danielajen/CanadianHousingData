@@ -34,7 +34,7 @@ const Header = ({ path, User }) => {
             <img
               src="assets/logo.png"
               className="logo"
-              alt="Glocal Foundation"
+              alt="GLOCAL FOUNDATION"
               style={{ width: "60px", height: "60px" }}
             />
           </Link>
@@ -48,7 +48,7 @@ const Header = ({ path, User }) => {
                   fontWeight: "bold",
                 }}
               >
-                Glocal
+                GLOCAL
               </h1>
               <h3 style={{ margin: 0, color: "#000", fontSize: "14px", fontWeight: "600px"}}>
                 Foundation of Canada
