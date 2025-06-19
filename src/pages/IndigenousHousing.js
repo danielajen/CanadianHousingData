@@ -38,11 +38,10 @@ const IndigenousHousing = () => {
       const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify([
-          { vectorId: 1595186177, latestN: 1 }, // Total in core housing need
-          { vectorId: 1595186181, latestN: 1 }, // Owners in core need
-          { vectorId: 1595186185, latestN: 1 }  // Renters in core need
-        ])
+        body: JSON.stringify({
+          vectorIds: [1595186177, 1595186181, 1595186185], // array of vector IDs
+          latestN: 1                                    // single value for latest periods
+        })
       });
 
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -78,11 +77,10 @@ const IndigenousHousing = () => {
       const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify([
-          { vectorId: 1595189454, latestN: 1 }, // Total spending ≥30%
-          { vectorId: 1595189459, latestN: 1 }, // Owners spending ≥30%
-          { vectorId: 1595189464, latestN: 1 }  // Renters spending ≥30%
-        ])
+        body: JSON.stringify({
+          vectorIds: [1595189454, 1595189459, 1595189464], // vector IDs array
+          latestN: 1                                       // latestN as a single number
+        })
       });
   
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -118,11 +116,10 @@ const IndigenousHousing = () => {
       const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify([
-          { vectorId: 1600170570, latestN: 1 }, // Total housing tenure
-          { vectorId: 1600170606, latestN: 1 }, // Owner-occupied
-          { vectorId: 1600170642, latestN: 1 }  // Renter-occupied
-        ])
+        body: JSON.stringify({
+          vectorIds: [1600170570, 1600170606, 1600170642],
+          latestN: 1
+        })
       });
   
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
