@@ -7,7 +7,7 @@ const app = express();
 
 // CORS origin uses env var or fallback for local dev
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: process.env.CLIENT_URL,
   methods: ['POST', 'GET']  // Allow GET for root route
 }));
 
