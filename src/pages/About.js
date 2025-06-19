@@ -1,5 +1,4 @@
 import React from "react";
-// import HousingStats from "../components/HousingStats";
 import "../App.css";
 
 const About = () => {
@@ -10,32 +9,6 @@ const About = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       {/* Banner */}
-      {/* <div
-        style={{
-          backgroundImage: "url('/assets/main-banner.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center right",
-          color: "white",
-          padding: "60px 20px",
-          minHeight: "320px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-        }}
-      >
-        <div style={{ maxWidth: "900px" }}>
-          <h1 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "20px" }}>
-            About Us — Bridging Data and Housing Solutions
-          </h1>
-          <p style={{ fontSize: "1.1rem", lineHeight: "1.7" }}>
-            Our mission is to provide transparency, accessibility, and actionable insights into Canada's housing market.
-            We collect, analyze, and visualize data from trusted sources such as CMHC, Statistics Canada, and provincial open data.
-            Our platform empowers residents, advocates, and researchers to act with informed confidence.
-          </p>
-        </div>
-      </div> */}
-
 <div className="w-full text-white px-4 py-20 relative" style={{
   backgroundImage: `url(${process.env.PUBLIC_URL}/assets/about-us.png)`,
   backgroundSize: "cover",
