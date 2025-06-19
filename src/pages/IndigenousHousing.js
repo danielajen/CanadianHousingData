@@ -38,10 +38,11 @@ const IndigenousHousing = () => {
       const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          vectorIds: [1595186177, 1595186181, 1595186185], // array of vector IDs
-          latestN: 1                                    // single value for latest periods
-        })
+        body: JSON.stringify([
+          { vectorId: 1595186177, latestN: 1 },
+          { vectorId: 1595186181, latestN: 1 },
+          { vectorId: 1595186185, latestN: 1 }
+        ])
       });
 
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -77,10 +78,11 @@ const IndigenousHousing = () => {
       const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          vectorIds: [1595189454, 1595189459, 1595189464], // vector IDs array
-          latestN: 1                                       // latestN as a single number
-        })
+        body: JSON.stringify([
+          { vectorId: 1595189454, latestN: 1 },
+          { vectorId: 1595189459, latestN: 1 },
+          { vectorId: 1595189464, latestN: 1 }
+        ])
       });
   
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -116,10 +118,11 @@ const IndigenousHousing = () => {
       const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          vectorIds: [1600170570, 1600170606, 1600170642],
-          latestN: 1
-        })
+        body: JSON.stringify([
+          { vectorId: 1600170570, latestN: 1 },
+          { vectorId: 1600170606, latestN: 1 },
+          { vectorId: 1600170642, latestN: 1 }
+        ])
       });
   
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -152,75 +155,9 @@ const IndigenousHousing = () => {
 
 
 
-  /*const fetchHousingDensity = async () => {
-    try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/statcan`, {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify([
-          // First Nations breakdown
-          { vectorId: "1.1.1.1.1.1.4.1", latestN: 1 }, // Total
-          { vectorId: "1.1.1.1.1.1.4.3", latestN: 1 }, // >1 person
-          
-          // Métis breakdown
-          { vectorId: "1.1.1.1.1.1.5.1", latestN: 1 }, // Total
-          { vectorId: "1.1.1.1.1.1.5.3", latestN: 1 }, // >1 person
-          
-          // Inuit breakdown
-          { vectorId: "1.1.1.1.1.1.6.1", latestN: 1 }, // Total
-          { vectorId: "1.1.1.1.1.1.6.3", latestN: 1 }, // >1 person
-          
-          // Multiple Indigenous responses
-          { vectorId: "1.1.1.1.1.1.7.1", latestN: 1 }, // Total
-          { vectorId: "1.1.1.1.1.1.7.3", latestN: 1 }  // >1 person
-        ])
-      });
-  
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-  
-      const data = await response.json();
-  
-      // Process data with original formatting
-      const housingDensityData = {
-        labels: ["First Nations", "Métis", "Inuit", "Multiple Responses"],
-        datasets: [
-          {
-            label: 'Total Population',
-            data: [
-              data[0].object.vectorDataPoint[0]?.value,
-              data[2].object.vectorDataPoint[0]?.value,
-              data[4].object.vectorDataPoint[0]?.value,
-              data[6].object.vectorDataPoint[0]?.value
-            ],
-            backgroundColor: '#4e79a7'
-          },
-          {
-            label: 'Overcrowded Households',
-            data: [
-              data[1].object.vectorDataPoint[0]?.value,
-              data[3].object.vectorDataPoint[0]?.value,
-              data[5].object.vectorDataPoint[0]?.value,
-              data[7].object.vectorDataPoint[0]?.value
-            ],
-            backgroundColor: '#e15759'
-          }
-        ]
-      };
-  
-      setHousingDensityData(housingDensityData);
-      setLoading(false);
-  
-    } catch (err) {
-      console.error("Housing density fetch failed:", err);
-      setError(err.message);
-      setLoading(false);
-    }
-  };*/
-
   useEffect(() => {
     fetchHousingNeed();
     fetchEducationHousing();
-    //fetchHousingDensity();
     fetchAffordabilityData();
   }, []);
 
@@ -500,61 +437,6 @@ const IndigenousHousing = () => {
 
   {loading && <div style={{ marginTop: '20px' }}>Loading housing tenure data...</div>}
   {error && <div style={{ color: '#c0392b', marginTop: '20px' }}>{error}</div>}
-</div>
-
-
-{/* Housing Density Section  1*/}
-{/*
-<div style={{ 
-        background: '#fff', 
-        padding: '20px', 
-        borderRadius: '8px', 
-        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-        marginTop: '40px'
-      }}>
-        <h3 style={{ color: '#2c3e50', marginBottom: '15px' }}>
-          Housing Density by Indigenous Identity (2021)
-        </h3>
-        
-        {housingDensityData1 && (
-          <div style={{ height: '400px', position: 'relative' }}>
-            <Bar 
-              data={housingDensityData1}
-              options={{
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                  legend: { 
-                    position: 'top',
-                    labels: {
-                      padding: 20,
-                      boxWidth: 12,
-                      font: { size: 12 }
-                    }
-                  },
-                  tooltip: {
-                    callbacks: {
-                      label: (context) => 
-                        `${context.dataset.label}: ${context.parsed.y.toLocaleString()}`
-                    }
-                  }
-                },
-                scales: {
-                  y: {
-                    beginAtZero: true,
-                    title: { display: true, text: 'Number of Persons' },
-                    ticks: { 
-                      callback: (value) => value.toLocaleString() 
-                    }
-                  }
-                }
-              }}
-            />
-          </div>
-        )}
-
-{loading && <div style={{ marginTop: '20px' }}>Loading housing density data...</div>}
-{error && <div style={{ color: '#c0392b', marginTop: '20px' }}>{error}</div>}
 </div>
 
 
