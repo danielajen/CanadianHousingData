@@ -8,11 +8,17 @@ const app = express();
 // CORS origin uses env var or fallback for local dev
 app.use(cors({
   origin: process.env.CLIENT_URL || 'http://localhost:3000',
-  methods: ['POST']
+  methods: ['POST', 'GET']  // Allow GET for root route
 }));
 
 app.use(express.json());
 
+// Root route to confirm server is running
+app.get('/', (req, res) => {
+  res.send('Backend is running!');
+});
+
+// POST proxy route to StatCan API
 app.post('/api/statcan', async (req, res) => {
   try {
     const statcanResponse = await axios.post(
