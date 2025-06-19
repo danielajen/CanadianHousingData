@@ -37,7 +37,7 @@ const About = () => {
       </div> */}
 
 <div className="w-full text-white px-4 py-20 relative" style={{
-  backgroundImage: `url(${process.env.PUBLIC_URL}/assets/about-us.png')`,
+  backgroundImage: `url(${process.env.PUBLIC_URL}/assets/about-us.png)`,
   backgroundSize: "cover",
   backgroundPosition: "center",
 }}>
