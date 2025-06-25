@@ -8,7 +8,10 @@
 
 This full-stack application visualizes Canadian housing statistics to promote data literacy and civic engagement. Built for GLOCAL's mission, it combines interactive dashboards with policy education tools to empower tenants, researchers, and activists.
 
+## 🌐 Live Demo & Website
 
+- 🔗 **Live Website:** [https://danielajen.github.io/CanadianHousingData/](https://danielajen.github.io/CanadianHousingData/)
+- 🎥 **Project Demo Video:** *Coming soon* (or replace with YouTube/Vimeo link if available)
 
 ## ✨ Features
 - **Interactive Housing Dashboards**: Explore rent prices, vacancy rates, and affordability metrics
