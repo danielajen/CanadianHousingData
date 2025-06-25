@@ -4,7 +4,7 @@
 [![React](https://img.shields.io/badge/React-18.2-blue)](https://react.dev/)
 [![Chart.js](https://img.shields.io/badge/Chart.js-4.4-green)](https://www.chartjs.org/)
 
-> A civic-tech platform transforming complex housing data into actionable insights for Canadians
+A civic-tech platform transforming complex housing data into actionable insights for Canadians
 **🌐 Live Website:** [https://danielajen.github.io/CanadianHousingData/](https://danielajen.github.io/CanadianHousingData/)
 This full-stack application visualizes Canadian housing statistics to promote data literacy and civic engagement. Built for GLOCAL's mission, it combines interactive dashboards with policy education tools to empower tenants, researchers, and activists.
 
