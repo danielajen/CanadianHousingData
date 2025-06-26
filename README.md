@@ -11,7 +11,7 @@ This full-stack application visualizes Canadian housing statistics to promote da
 ## 🌐 Live Demo & Website
 
 - 🔗 **Live Website:** [https://danielajen.github.io/CanadianHousingData/](https://danielajen.github.io/CanadianHousingData/)
-- 🎥 **Project Demo Video:** *Coming soon* (or replace with YouTube/Vimeo link if available)
+- 🎥 **Project Demo Video:** [https://www.youtube.com/watch?v=kX_uR_e5pIU&t=17s](https://www.youtube.com/watch?v=kX_uR_e5pIU&t=17s)
 
 ## ✨ Features
 - **Interactive Housing Dashboards**: Explore rent prices, vacancy rates, and affordability metrics
